@@ -10,6 +10,10 @@ use Drupal\Core\Controller\ControllerBase;
 **/
 
 class HelloController extends ControllerBase {
+
+    /**
+   * Hello world.
+   */
     public function hello($name = NULL) {
         if ($name) {
             $output = $this->t("Hello @person", ['@person' => $name]);
