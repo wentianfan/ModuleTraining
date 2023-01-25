@@ -17,7 +17,7 @@ hello_world.page.page_person:
 hello_world.page.page_person_node:
   path: /hello/{name}/{nid}
   defaults:
-    _title: 'Hello World'
+    _title: 'Person and Node'
     _controller: 'Drupal\hello_world\Controller\HelloController::helloNameNode'
   requirements:
     _access: 'TRUE'

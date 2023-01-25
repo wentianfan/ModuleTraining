@@ -30,21 +30,34 @@ class HelloController extends ControllerBase {
         ];
     }
 
- /**
+  /**
    * print person and node.
    */
 
-   public function helloNameNode($name, $nid){
-    $node= Node::load(1);
-    ksm($node->getTitle());
-    ksm($node->toLink());
+  public function helloNameNode($name, $nid){
+    //ksm($name);
+    //ksm(gettype($nid));    
+    $node= Node::load($nid);
+      if (!$node){
+        $output = $this->t("The @input is not a valid page id.", ['@input' =>$nid]);
+        return [
+          '#type' => 'markup',
+          '#markup' => $output,
+        ];
+      }    
+    
+    //ksm($node->getTitle());
+    //ksm($node->toLink());
+    $link = $node->toLink();
   
-    $output = $this->t("Hi @person! The title of this node is @title", ['@person' => $name, '@title' => $node->getTitle()]);
-    $url = Url::fromRoute('entity.node.canoical', ['node' =>$nid]);
-	  ksm($url);
-	  $link = Link::fromTestAndUrl($node->getTitle(), $url);
-	  ksm($link);
-
+    //$output = $this->t("Hi @person! The title of this node is @title", ['@person' => $name, '@title' => $node->getTitle()]);
+    //$url = Url::fromRoute('entity.node.canoical', ['node' =>$nid]);
+	  //ksm($url);
+	  //$link = Link::fromTestAndUrl($node->getTitle(), $url);
+	  //ksm($link);
+       
+    $output = $this->t("Hi @person! The title of this node is @title", ['@person' => $name, '@title' => $link->toString()]);
+        
     return [
       '#type' => 'markup',
       '#markup' => $output,
