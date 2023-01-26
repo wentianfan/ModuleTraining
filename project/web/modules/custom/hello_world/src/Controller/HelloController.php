@@ -81,7 +81,7 @@ class HelloController extends ControllerBase {
       '#type' => 'markup',
       '#markup' => $output,
     ];
-  }
+}
 
-}    
+  
 
