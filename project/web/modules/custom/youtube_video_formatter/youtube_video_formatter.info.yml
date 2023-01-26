@@ -1,0 +1,8 @@
+name: YouTube Video Formatter
+type: module
+description: Convert YouTube video ID to embeded video
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9 || ^10
+dependencies:
+  - text

@@ -62,26 +62,29 @@ class HelloController extends ControllerBase {
   }
 
   //teacher's code
-  $output = [];
-    if (is_numeric($nid)) {
-      $node = Node::load($nid);
-      if ($node) {
-        $title = $node->toLink()->toString();
-        $output = $this->t('Hello @name! The title of the node is @title', ['@name' => $name, '@title' => $title]);
-      }
-      else {
-        $output = $this->t('Hey :name! That nid does not exists!', [':name' => $name]);
-      }
-    }
-    else {
-      $output = $this->t('Hey :name! That nid should be a number!', [':name' => $name]);
-    }
+    // $output = [];
+    // if (is_numeric($nid)) {
+    //   $node = Node::load($nid);
+    //   if ($node) {
+    //     $title = $node->toLink()->toString();
+    //     $output = $this->t('Hello @name! The title of the node is @title', ['@name' => $name, '@title' => $title]);
+    //   }
+    //   else {
+    //     $output = $this->t('Hey :name! That nid does not exists!', [':name' => $name]);
+    //   }
+    // }
+    // else {
+    //   $output = $this->t('Hey :name! That nid should be a number!', [':name' => $name]);
+    // }
 
-    return [
-      '#type' => 'markup',
-      '#markup' => $output,
-    ];
+    // return [
+    //   '#type' => 'markup',
+    //   '#markup' => $output,
+    // ];
+
+
 }
+
 
   
 
