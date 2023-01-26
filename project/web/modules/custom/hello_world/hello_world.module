@@ -5,18 +5,18 @@
  * Implements hook_form_alter().
  */
 
-function hello_world_form_alter (&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id){
+//function hello_world_form_alter (&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id){
     //ksm($form);
     //ksm($form_id);
     //ksm($form_state);    
 
-    if ($form_id === 'node_artical_form') {
-        ksm($form);
-        $form['options']['#open'] = TRUE;
-    }
-}
+    //if ($form_id === 'node_artical_form') {
+    //    ksm($form);
+    //    $form['options']['#open'] = TRUE;
+    //}
+//}
 
-function hello_world_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function hello_world_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
     if ($form_id === 'node_article_form') {
     $forms = [
       'node_page_form',
@@ -42,16 +42,4 @@ function hello_world_form_node_article_form_alter (&$form, \Drupal\Core\Form\For
     //same function as above two lines
     //$form['field_tags']['#access'] = \Drupal::currentUer()->hasPermission('administer content');
     
-}
-
-function hello_world_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-    if ($form_id === 'node_article_form') {
-        $forms = [
-            'node_page_form',
-            'node_article_form',
-        ];
-        if (in_array($form_id, $forms)) {
-            $form['options']['#open'] = TRUE;
-        }
-    }
 }
