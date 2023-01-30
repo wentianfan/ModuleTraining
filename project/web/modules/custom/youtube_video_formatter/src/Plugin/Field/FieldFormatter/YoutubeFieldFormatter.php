@@ -28,12 +28,48 @@ class YoutubeFieldFormatter extends FormatterBase {
     foreach ($items as $delta => $item) {
       $elements[$delta] = [
         '#theme' => 'youtube_video',
-        '#youtube_id' => $item->value, 
+        '#youtube_id' => $item->value,
+        '#width' => $this->getSettings('width'), 
       ];
     }
 
     return $elements;
   }
+
+  /**
+   * {@inheritdoc} 
+   */
+
+  public static function defaultSettings() {
+    return[
+      'width' => '',
+    ] + parent::defaultSettings();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsForm (array $form, FormStateInterface $form_state ){
+    $element['width'] = [
+      'type' => 'number',
+      'title' => 'video width',
+      'default_value' => '560',
+      '#required' => TRUE,
+    ];
+
+    return $element;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsSummary(){
+    $summary = [];
+
+    $summary[] = 'The width is'. $this->getSettings('width');
+
+    return $summary;
+  } 
 
 }
 

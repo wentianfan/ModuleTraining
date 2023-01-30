@@ -10,6 +10,7 @@
         'youtube_video' => [
             'variables' => [
                 'youtube_id' => NULL,
+                'width' => 560,
             ],
         ],
     ];
