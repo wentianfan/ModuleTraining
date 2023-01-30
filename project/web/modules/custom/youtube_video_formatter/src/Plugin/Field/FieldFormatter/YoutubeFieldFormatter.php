@@ -4,6 +4,7 @@ namespace Drupal\youtube_video_formatter\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Plugin implementation of the 'youtube_video_formatter' formatter.
@@ -30,6 +31,7 @@ class YoutubeFieldFormatter extends FormatterBase {
         '#theme' => 'youtube_video',
         '#youtube_id' => $item->value,
         '#width' => $this->getSettings('width'), 
+        '#height' => $this->getSettings('height'), 
       ];
     }
 
@@ -43,6 +45,7 @@ class YoutubeFieldFormatter extends FormatterBase {
   public static function defaultSettings() {
     return[
       'width' => '',
+      'height' => '',
     ] + parent::defaultSettings();
   }
 
@@ -53,7 +56,14 @@ class YoutubeFieldFormatter extends FormatterBase {
     $element['width'] = [
       'type' => 'number',
       'title' => 'video width',
-      'default_value' => '560',
+      'default_value' => '800',
+      '#required' => TRUE,
+    ];
+
+    $element['height'] = [
+      'type' => 'number',
+      'title' => 'video height',
+      'default_value' => '600',
       '#required' => TRUE,
     ];
 
@@ -66,7 +76,8 @@ class YoutubeFieldFormatter extends FormatterBase {
   public function settingsSummary(){
     $summary = [];
 
-    $summary[] = 'The width is'. $this->getSettings('width');
+    $summary[] = 'The width is '. $this->getSettings('width');
+    $summary[] = 'The height is '. $this->getSettings('height');
 
     return $summary;
   } 
