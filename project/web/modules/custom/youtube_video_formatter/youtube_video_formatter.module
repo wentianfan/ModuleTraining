@@ -10,7 +10,8 @@
         'youtube_video' => [
             'variables' => [
                 'youtube_id' => NULL,
-                'width' => 560,
+                'width' => 800,
+                'height' => 600,
             ],
         ],
     ];
