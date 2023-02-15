@@ -3,6 +3,7 @@
 namespace Drupal\amd\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\user\Entity\User;
 
 /**
  * Provides a hello user block.
