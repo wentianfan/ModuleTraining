@@ -1,0 +1,19 @@
+uuid: 8ffd27e2-274e-45ab-80b2-0c8a3ed9d04e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_youtube_video_id
+    - node.type.article
+id: node.article.field_youtube_video_id
+field_name: field_youtube_video_id
+entity_type: node
+bundle: article
+label: 'YouTube Video ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
