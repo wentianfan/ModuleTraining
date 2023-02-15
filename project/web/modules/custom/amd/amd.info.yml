@@ -1,0 +1,6 @@
+name: amd
+type: module
+description: test code for advanced module training
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9
