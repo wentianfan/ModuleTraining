@@ -30,8 +30,8 @@ class YoutubeFieldFormatter extends FormatterBase {
       $elements[$delta] = [
         '#theme' => 'youtube_video',
         '#youtube_id' => $item->value,
-        '#width' => $this->getSettings('width'), 
-        '#height' => $this->getSettings('height'), 
+        '#width' => $this->getSetting('width'), 
+        '#height' => $this->getSetting('height'), 
       ];
     }
 
@@ -76,8 +76,8 @@ class YoutubeFieldFormatter extends FormatterBase {
   public function settingsSummary(){
     $summary = [];
 
-    $summary[] = 'The width is '. $this->getSettings('width');
-    $summary[] = 'The height is '. $this->getSettings('height');
+    $summary[] = 'The width is '. $this->getSetting('width');
+    $summary[] = 'The height is '. $this->getSetting('height');
 
     return $summary;
   } 
