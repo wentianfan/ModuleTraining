@@ -20,7 +20,7 @@ class HelloWorld extends BlockBase {
     */
     public function build() {
         $build = [
-            '#markup' => $this->t('Hello, World'),
+            '#markup' => $this->t('Hello, World.'),
         ];
         return $build;
   }
