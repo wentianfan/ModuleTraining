@@ -9,18 +9,18 @@ use Drupal\Core\Block\BlockBase;
  * 
  * @Block {
  *  id = "hello world",
- *  admin_label = @Translation("Hello World Block"),
- *  catergory = @Translation("Advanced Module Training")
+ *  admin_label = @Translation("Hello World"),
+ *  category = @Translation("Custom")
  * }
  */
 
-class HelloWorld extends blockBase { 
+class HelloWorld extends BlockBase { 
     /**
     * {@inheritdoc}
     */
     public function build() {
         $build = [
-            '#markup' => $this->t('Hello, World.'),
+            '#markup' => $this->t('Hello, World'),
         ];
         return $build;
   }

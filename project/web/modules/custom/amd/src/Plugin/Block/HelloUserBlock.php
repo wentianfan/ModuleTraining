@@ -21,9 +21,10 @@ class HelloUserBlock extends BlockBase {
    */
   public function build() {
     $user = User::load(\Drupal::currentUser()->id());
+    $transform = \Drupal::services('text_transformer');
 
     $build['content'] = [
-      '#markup' => $this->t('Hello,' . $user->getAccountName()),
+      '#markup' => $this->t('Hello,' . $transform->reverse($user->getAccountName())),
     ];
     return $build;
   }
