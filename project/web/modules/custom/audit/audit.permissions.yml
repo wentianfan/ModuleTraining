@@ -1,0 +1,5 @@
+administer deletion record:
+  title: 'Administer deletion record settings'
+  restrict access: true
+access deletion record overview:
+  title: 'Access deletion record overview page'

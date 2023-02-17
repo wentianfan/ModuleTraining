@@ -21,6 +21,7 @@
         "drupal/core-recommended": "^9.4",
         "drupal/devel": "^5.1",
         "drupal/examples": "^3.0",
+        "drupal/hook_event_dispatcher": "^3.3",
         "drush/drush": "^10"
     },
     "conflict": {
